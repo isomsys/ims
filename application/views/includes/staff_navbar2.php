@@ -26,10 +26,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="<?php echo site_url('Staffmem/index')?>"> staff view</a></li>
-    <li><a href="#">Delete Staff</a></li>
-    <li><a href="#">Staff ID</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Staff Contact</a></li>
+  
   </ul>
 </li>
                       <li class="divider"></li>  
@@ -39,7 +36,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
        
-      <li><a href="<?php echo site_url('isocontainer/AddContainer')?>">Add Iso-Container</a></li>
+      <li><a href="<?php echo site_url('isocontainer/AddContainer')?>">Add iso container</a></li>
     <li><a href="<?php echo site_url('isocontainer/DeleteContainer')?>">Delete Iso-Container</a></li>
     <li><a href="<?php echo site_url('isocontainer/EditContainer')?>">Edit Iso-Container</a></li>
     <li class="divider"></li>
@@ -52,11 +49,14 @@
     Work flow <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Service Id</a></li>
-    <li><a href="#">Location Status</a></li>
-    <li><a href="#">Supervisor id</a></li>
+    <li><a href="<?php echo site_url('isocontainer/createworkorder')?>">Create</a></li>
+    <li><a href="<?php echo site_url('isocontainer/isoinspectionform2')?>">view</a></li>
+    <li><a href="<?php echo site_url('isocontainer/isoinspectionform3')?>">cancel</a></li>
+    <li><a href="<?php echo site_url('isocontainer/isoinspectionform4')?>">Search</a></li>
+    
+    
     <li class="divider"></li>
-    <li><a href="#">Sub Task Id</a></li>
+    <li><a href="<?php echo site_url('isocontainer/viewsection3')?>">view</a></li>
   </ul>
 </li>
                         <li><a href="<?php echo site_url('site/logout')?>"><button type="button" class="btn btn-info">Log out</button></a>

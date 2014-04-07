@@ -73,7 +73,6 @@ return(confirm("Are You Sure"));
                 <th>Profile Photo</th>
                 <th>First name</th>
                 <th>Last name</th>
-                <th>SupervisorId</th>
                 <th>Email</th>
                 <th>Role</th>   
                 
@@ -97,11 +96,13 @@ return(confirm("Are You Sure"));
                 ?>
                 <tr>
                     <td><?php echo $i ?></td>
-                    <td><a href="<?php echo site_url('Staffmem/StaffProfile/' . $staff['StaffId']) ?>"> <? echo $staff['StaffId'] ?> </a></td>
+                  
+                      <td><?php echo $staff['StaffId'] ?> </td>
                     <td><img src="../pp.jpeg" alt="" height='100' width='100'/></td>
+              
                     <td><?php echo $staff['FirstName'] ?> </td>
                     <td><?php echo $staff['LastName'] ?> </td>
-                    <td><?php echo $staff['SupervisorId'] ?> </td>
+                   
                     <td><?php echo $staff['Email'] ?> </td>
                     <td><?php echo $staff['Role'] ?> </td>
                     <td>

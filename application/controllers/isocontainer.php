@@ -17,6 +17,73 @@ public $id2;
 
         
     }
+    
+    public function sample()
+    {
+        
+      $hcells1=$this->input->post('hcells');
+      $vesselid1=$this->input->post('vesselid');
+      $fill1=$this->input->post('fill');
+      $vent1=$this->input->post('vent');
+      $air1=$this->input->post('air/n2');
+      $fusible1=$this->input->post('fusible');
+      $batchno1=$this->input->post('batchno');
+      $repairs1=$this->input->post('repairs');
+      $clean1=$this->input->post('clean');
+      $date1=$this->input->post('datepicker');
+      
+      $bobu = array(
+            'vesselid' => $vesselid1,
+            'vesselid' => $vesselid1,
+            'fill' => $fill1,
+            'vent' => $vent1,
+            'air' => $air1,
+            'fusible' => $fusible1,
+            'batchno' => $batchno1,
+            'repairs' => $repairs1,
+            'clean' => $clean1,
+            'date' => $date1,
+           'hcells'=>$hcells1
+            
+        );
+      
+      
+         $this->iso_model->add_sample($bobu);
+              $this->load->view('Section3');     
+                 
+                 
+             
+    }
+    
+    
+   public function viewsection3()
+{
+    
+    $this->load->view('view_section3');
+    
+} 
+public function Findsec3(){
+    
+    $data['key'] = $this->input->post('Sec3');
+    $data1['key1']=$this->input->post('hcells');
+  
+    $this->load->view('sec3',$data,$data1);
+    
+}    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 public function AddContainer()
 {
     $isocontainer2 = array(
@@ -61,6 +128,9 @@ public function FindContainer(){
     $this->load->view('find',$data);
     
 }
+
+    
+
 public function findload(){
     
     $data['key'] = $this->input->post('Search');
@@ -115,6 +185,7 @@ public function RemoveContainer()
 if(isset($_POST['delete'])){
 for($i=0;$i<count($_POST['checkbox']);$i++){
 $del_id=$_POST['checkbox'][$i];
+
 $this->iso_model->delete($del_id);
 
 
@@ -147,7 +218,7 @@ $this->iso_model->delete($del_id);
         );
         $this->iso_model->update($isocontainer1);
         
-        $this->load->view('add_iso',$data);
+        $this->load->view('add_iso');
 
         //$data['id'] = $id;
         //$data['active'] = 'profile';
@@ -184,4 +255,90 @@ public function profile($id) {
         
         $this->load->view('iso_profile', $data);
     }
+ 
+ 
+ public function isoinspectionform1(){
+    
+    
+    $this->load->view('Section1'); 
+    
+}
+ public function isoinspectionform2(){
+    
+    
+    $this->load->view('Section2'); 
+    
+}
+ public function isoinspectionform3(){
+    
+    
+    $this->load->view('Section3'); 
+    
+}
+public function isoinspectionform4(){
+    
+    
+    $this->load->view('Section4'); 
+    
+}
+public function isoinspectionform5(){
+    
+    
+    $this->load->view('Section5'); 
+    
+}
+public function isoinspectionform6(){
+    
+    
+    $this->load->view('Section6'); 
+    
+}
+
+public function createworkorder(){
+    
+     $maxid = $this->iso_model->maxwkid();
+     $mam=$maxid+1;
+     $data['mid']=$mam;
+   $this->load->view('createwk'); 
+    
+}
+public function storewkflow(){
+    $Containerid = $this->input->post('wkoid');
+        $capacity = $this->input->post('equip');
+        $driverid = $this->input->post('manu');
+        $loadstatus = $this->input->post('size');
+        
+
+    
+        //update patient
+        $workflow= array(
+            'workorderid' => $Containerid,
+            'equipmentid' => $capacity,
+            'containersize' => $driverid,
+            'manufacturer' => $loadstatus,
+            
+        );
+    
+    $this->iso_model->wkidupdate($workflow);
+    $this->load->view('wkdetails');
+}
+
+
+public function wkdetails(){
+    
+    $this->load->view('Section3');
+}
+
+public function cdimen(){
+    
+    $this->load->view('Section1');
+}
+public function finspec(){
+    
+    $this->load->view('Section4');
+}
+
+
+
+
  }

@@ -56,6 +56,12 @@ class iso_model extends CI_Model {
         $row = $this->db->get_where('isocontainer', array('ContainerId' => $id))->row();
         return $row;
     }
+    
+    public function get_by_vesselid($id) {
+        $row = $this->db->get_where('bobu14t', array('vesselid' => $id))->row();
+        return $row;
+    }
+    
 
     public function get_firstname($id) {
         $row = $this->db->get_where('patients', array('id' => $id))->row();
@@ -71,6 +77,12 @@ class iso_model extends CI_Model {
         $this->db->insert('isocontainer', array('ContainerId' => '', 'Capacity' => '', 'DriverId' => '', 'LoadStatus' => '01-01-2013'));
         return $this->db->insert_id();
         
+    }
+     public function add_sample($bobu1) {
+      //  $this->db->insert('bobu14t', array('vesselid' => $btn_val, 'manway' => $btn_val, 'man' => $btn_val));
+        //return $this->db->insert_id();
+        $this->db->set($bobu1);
+        $this->db->insert('bobu14t');
     }
 
     public function delete($del_id) {
@@ -93,5 +105,29 @@ class iso_model extends CI_Model {
         $this->db->where('ContainerId', $id2);
 $this->db->update('isocontainer', $isocontainer1); 
     }
+    
+public function maxwkid()
+{
+   // $maxid = 0;
+$row = $this->db->query('SELECT MAX(workorderid) AS `maxid` FROM `workflow`')->row();
+if ($row) {
+    $maxid = $row->maxid; 
+}
+   return $maxid; 
+    
+    
+}
 
+public function wkidupdate($wkflow)
+               
+                    
+{
+       
+   $this->db->set($wkflow);
+     
+$this->db->insert('workflow'); 
+    }
+    
+    
+    
 }

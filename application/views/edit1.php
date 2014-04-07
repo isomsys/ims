@@ -29,10 +29,30 @@
                 
                                 
 
-                <div>
-                    <button type ="submit" class="btn btn-primary">save</button>
-                    
+                 <div>
+                  
+                     <button  type ="button" href ="#myModal" role ="button" style="left: 13%;" data-toggle="modal" class="btn btn-danger">Save</button>
                 </div>
+     
+         <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you want to make changes?</p>
+                <p class="text-warning"><small>Press Save if you want to</small></p>
+            </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    
+                    <button type="submit"  class="btn btn-danger" >Save</button>
+                    </div>
+            </div></div>
+                </div>
+                </form>
                 </div>
 
                            

@@ -35,7 +35,7 @@
             echo '</div>';
         }
         ?>
-        <p>Go back to <a href="<?echo site_url()?>">Login</a></p>
+        <p>Go back to <a href="http://localhost/ims/login">Login</a></p>
          
     </div>
     <?php $this->load->view('includes/footer'); ?>

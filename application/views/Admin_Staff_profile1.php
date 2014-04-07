@@ -96,6 +96,8 @@
 
                 <div>
                     <button type ="submit" style="background-color: red"> ADD</button>
+                    <a href="<?php echo site_url('site')?>"><button type="button" class="btn btn-info">Home</button></a>
+               
  
                 </div>
 
